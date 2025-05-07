@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap | Bi'TabakDaha</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Temel stiller (style.css'de de olabilir) */
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Giriş Formu Stilleri */
+        .login {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .login input[type="text"], /* Kullanıcı adı için */
+        .login input[type="email"],
+        .login input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .login button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login button[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        .login p {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .login p a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login p a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg" style="height: 60px; margin-right: 10px; vertical-align: middle;">
+                <h1>Bi'TabakDaha</h1>
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="#" id="tarif-ekle-link">Tarif Ekle</a>
+            <a href="search.html">Tarif Ara</a>
+            <a href="favorites.html">Favorilerim</a>
+        </div>
+        <div class="user-nav">
+            <a href="register.html">Kayıt Ol</a>
+            <a href="login.html">Giriş Yap</a>
+            <a href="profile.html">Profil</a>
+        </div>
+    </div>
+
+    <div class="login">
+        <h2>Giriş Yap</h2>
+        <form action="#" method="post" onsubmit="handleLogin(event)">
+            <input type="text" name="usernameOrEmail" placeholder="Kullanıcı Adı veya E-posta" required>
+            <input type="password" name="password" placeholder="Şifre" required>
+            <button type="submit">Giriş Yap</button>
+        </form>
+
+        <p style="text-align: center;">
+            Hesabın yok mu? <a href="register.html">Kayıt Ol</a>.
+        </p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script>
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function handleLogin(event) {
+            event.preventDefault(); // Sayfanın yeniden yüklenmesini engelle
+
+            // **ÖNEMLİ:** Burada gerçek giriş doğrulama işlemini yapmanız gerekecek.
+            // Bu sadece bir örnektir ve her zaman başarılı bir giriş varsayar.
+            const usernameOrEmail = document.querySelector('input[name="usernameOrEmail"]').value;
+            const password = document.querySelector('input[name="password"]').value;
+
+            // **GERÇEK UYGULAMADA:**
+            // - Kullanıcı adı veya e-posta ve şifreyi sunucuya gönderip doğrulatın.
+            // - Giriş başarılıysa kullanıcı bilgilerini (örneğin, kullanıcı adı) localStorage'a kaydedin.
+
+            localStorage.setItem("username", usernameOrEmail); // Örnek olarak kullanıcı adı veya e-postayı kaydet
+
+            const redirectUrl = getQueryParam("redirect");
+            if (redirectUrl) {
+                window.location.href = redirectUrl;
+            } else {
+                window.location.href = "index.html";
+            }
+        }
+
+        // Tarif Ekle bağlantısı kontrolü (aynı işlevsellik)
+        const tarifEkleLink = document.querySelector('.main-nav a[href="#tarif-ekle-link"]');
+        if (tarifEkleLink) {
+            tarifEkleLink.addEventListener("click", function(e) {
+                e.preventDefault();
+                alert("Tarif ekleyebilmek için giriş yapmalısınız!");
+                window.location.href = "login.html?redirect=add-recipe.html";
+            });
+        }
+    </script>
+</body>
+</html>

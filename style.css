@@ -1,0 +1,443 @@
+/* Filigran Ayarları (index.html Hariç) */
+body:not(.index) {
+    background-image: url('arkaplan.jpg'); /* Filigran resminin dosya yolu */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Sabit kalarak kaydırma sırasında efekti korur */
+}
+
+body:not(.index)::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Beyaz yarı saydam katman (isteğe göre ayarlanabilir) */
+    z-index: -1; /* Arka planda kalması için */
+}
+
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f9f9f9; /* index.html arka planı (varsayılan) */
+    color: #333; /* Genel yazı rengi */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header {
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo img {
+    height: 60px;
+}
+
+.header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.header .logo h1 {
+    font-size: 28px;
+    color: #333;
+    margin-left: 10px;
+}
+
+.header .main-nav, .header .user-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header .main-nav a, .header .user-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #444; /* Gri link rengi */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.header .main-nav a:hover, .header .user-nav a:hover {
+    color: #e67e22; /* Turuncu hover rengi (varsayılan) */
+}
+
+/* NAVBAR (Mobil Menü İçin) */
+.navbar {
+    display: none; /* Başlangıçta gizli */
+    background-color: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo img {
+    height: 60px; /* Yüksekliği 60px olarak güncelledik */
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #e67e22;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #444;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        display: flex; /* Mobil görünümde göster */
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        padding: 20px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* KAYIT / GİRİŞ FORMU */
+.register, .login {
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.register h2,
+.login h2 {
+    color: #333; /* Gri başlık rengi */
+    margin-bottom: 20px;
+}
+
+.register input,
+.login input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.register button,
+.login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #e67e22; /* Turuncu buton rengi */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.register button:hover,
+.login button:hover {
+    background-color: #d35400; /* Daha koyu turuncu hover */
+}
+
+/* ARAMA KUTUSU */
+.arama-kutusu {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.arama-kutusu h2 {
+    color: #333; /* Gri başlık */
+    margin-bottom: 20px;
+}
+
+.arama-kutusu input,
+.arama-kutusu select {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.arama-kutusu button {
+    padding: 10px 20px;
+    background-color: #e67e22; /* Turuncu buton */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.arama-kutusu button:hover {
+    background-color: #d35400; /* Daha koyu turuncu hover */
+}
+
+/* TARİF KARTLARI */
+.tarif-kartlari, .arama-sonuclari {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 30px 15px;
+}
+
+.tarif-karti, .tarif-kart {
+    width: 260px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.tarif-karti:hover, .tarif-kart:hover {
+    transform: translateY(-5px);
+}
+
+.tarif-karti img,
+.tarif-kart img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tarif-karti h4, .tarif-kart h4 {
+    color: #333; /* Gri başlık */
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.tarif-karti p, .tarif-kart p {
+    color: #777; /* Açık gri yazı */
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.tarif-karti a, .tarif-kart a {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #f9f9f9; /* Açık gri buton */
+    color: #444; /* Gri yazı */
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+    border: 1px solid #ddd;
+}
+
+.tarif-karti a:hover, .tarif-kart a:hover {
+    background-color: #e67e22; /* Turuncu hover */
+    color: white;
+    border-color: #e67e22;
+}
+
+/* ADMIN PANELI */
+.admin-panel {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.admin-panel h2 {
+    color: #333; /* Gri başlık */
+    margin-bottom: 20px;
+}
+
+.admin-panel p {
+    color: #555; /* Daha koyu gri yazı */
+    margin-bottom: 25px;
+}
+
+.admin-panel button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #e67e22; /* Turuncu buton */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-panel button:hover {
+    background-color: #d35400; /* Daha koyu turuncu hover */
+}
+
+/* TARIF EKLE SAYFASI */
+.tarif-ekle {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tarif-ekle h2 {
+    color: #333; /* Gri başlık */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tarif-ekle input[type="text"],
+.tarif-ekle input[type="email"],
+.tarif-ekle input[type="password"],
+.tarif-ekle input[type="number"],
+.tarif-ekle input[type="file"],
+.tarif-ekle textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.tarif-ekle textarea {
+    resize: vertical;
+}
+
+.tarif-ekle button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #e67e22; /* Turuncu buton */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tarif-ekle button[type="submit"]:hover {
+    background-color: #d35400; /* Daha koyu turuncu hover */
+}
+
+/* TARIF DETAY SAYFASI */
+.tarif-detayi {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.tarif-gorsel {
+    flex: 1;
+}
+
+.tarif-gorsel img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.tarif-bilgileri {
+    flex: 1;
+}
+
+.tarif-detayi h2 {
+    color: #333; /* Gri başlık */
+    margin-bottom: 15px;
+}
+
+.tarif-detayi p {
+    color: #555; /* Daha koyu gri yazı */
+    margin-bottom: 10px;
+}
+
+.tarif-detayi h3 {
+    color: #444; /* Biraz daha açık gri başlık */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.tarif-detayi ul, .tarif-detayi ol {
+    padding-left: 20px;
+    margin-bottom: 15px;
+    color: #555; /* Daha koyu gri yazı */
+}
+
+.tarif-detayi li {
+    margin-bottom: 8px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #f0f0f0; /* Açık gri footer */
+    text-align: center;
+    padding: 20px;
+    color: #555; /* Daha koyu gri yazı */
+    margin-top: auto;
+}

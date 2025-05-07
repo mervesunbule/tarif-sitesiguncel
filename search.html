@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarif Ara | Bi'TabakDaha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg" style="height: 60px; margin-right: 10px; vertical-align: middle;">
+                <h1>Bi'TabakDaha</h1>
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="login.html?redirect=add-recipe.html" id="tarif-ekle-link">Tarif Ekle</a>
+            <a href="search.html">Tarif Ara</a>
+            <a href="favorites.html">Favorilerim</a>
+        </div>
+        <div class="user-nav">
+            <a href="register.html">Kayıt Ol</a>
+            <a href="login.html">Giriş Yap</a>
+            <a href="profile.html">Profil</a>
+        </div>
+    </div>
+
+    <div class="arama-kutusu">
+        <h2>Tarif Ara</h2>
+        <form action="#" method="get">
+            <input type="text" placeholder="Tarif adı veya malzeme ara..." required>
+            <select>
+                <option value="">Kategori Seçin</option>
+                <option value="tatlilar">Tatlılar</option>
+                <option value="ana-yemekler">Ana Yemekler</option>
+                <option value="corbalar">Çorbalar</option>
+                <option value="atistirmaliklar">Atıştırmalıklar</option>
+                <option value="icecekler">İçecekler</option>
+            </select>
+            <button type="submit">Ara</button>
+        </form>
+    </div>
+
+    <div class="tarif-kartlari">
+        <div class="tarif-karti">
+            <img src="kek.jpg" alt="Çikolatalı Kek">
+            <h4>Çikolatalı Kek</h4>
+            <p>Tatlılar | 30 dk</p>
+            <a href="recipe-detail.html">Tarifi Görüntüle</a>
+        </div>
+        <div class="tarif-karti">
+            <img src="corba.jpg" alt="Mercimek Çorbası">
+            <h4>Mercimek Çorbası</h4>
+            <p>Çorbalar | 25 dk</p>
+            <a href="recipe-detail.html">Tarifi Görüntüle</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

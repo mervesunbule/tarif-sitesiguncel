@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Yorumlar</title>
+  <link rel="stylesheet" href="yorum.css">
+</head>
+<body>
+
+  <div class="yorumlar-alani">
+    <h3>Yorumlar</h3>
+    <ul id="yorum-listesi"></ul>
+  </div>
+
+  <div class="yorum-formu">
+    <h3>Yorum Yap</h3>
+    <form id="yeniyorumformu">
+      <input type="hidden" id="tarif-id" name="tarif_id" value="1">
+      <div>
+        <label for="yazar-adi">Adınız:</label>
+        <input type="text" id="yazar-adi" name="yazar_adi" required>
+      </div>
+      <div>
+        <label for="yorum-metni">Yorumunuz:</label>
+        <textarea id="yorum-metni" name="yorum_metni" rows="5" required></textarea>
+      </div>
+      <button type="submit">Yorum Gönder</button>
+      <div id="yorum-mesaji" style="display:none;"></div>
+    </form>
+  </div>
+
+  <script src="yorum.js"></script>
+</body>
+</html>

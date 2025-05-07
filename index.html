@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bi'TabakDaha: En lezzetli tariflerin buluşma noktası. Tatlılar, ana yemekler, içecekler ve daha fazlası!">
+    <title>Bi'TabakDaha | Ana Sayfa</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Temel stiller */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px; /* Önceki 50px yerine 60px yaptık */
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            color: #333;
+            vertical-align: middle;
+            margin: 0; /* H1'in varsayılan margin'ini kaldır */
+        }
+
+        .logo a {
+            text-decoration: none; /* Bağlantı alt çizgisini kaldırır */
+            color: inherit; /* H1'in rengini miras alır */
+            display: flex; /* İçindeki öğeleri yan yana hizalamak için */
+            align-items: center; /* Dikeyde ortalamak için */
+        }
+
+        .main-nav a, .user-nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #444;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover, .user-nav a:hover {
+            color: #e67e22;
+        }
+
+        .main-nav, .user-nav {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Kategoriler */
+        .categories {
+            text-align: center;
+            margin: 30px auto 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .categories a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #444;
+            transition: color 0.3s ease;
+        }
+
+        .categories a:hover {
+            color: #e67e22;
+        }
+
+        /* Masonry Galeri */
+        .masonry-gallery {
+            column-count: 4;
+            column-gap: 15px;
+            padding: 20px;
+        }
+
+        .masonry-gallery img {
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            display: block;
+            break-inside: avoid;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .masonry-gallery img:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 1200px) {
+            .masonry-gallery {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .masonry-gallery {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .masonry-gallery {
+                column-count: 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body class="index">
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg"  style="height: 60px; margin-right: 10px; vertical-align: middle;">
+                <h1>Bi'TabakDaha</h1>
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="login.html?redirect=add-recipe.html" id="tarif-ekle-link">Tarif Ekle</a>
+            <a href="search.html">Tarif Ara</a>
+            <a href="favorites.html">Favorilerim</a> </div>
+        <div class="user-nav">
+            <a href="register.html">Kayıt Ol</a>
+            <a href="login.html">Giriş Yap</a>
+            <a href="profile.html">Profil</a>
+        </div>
+    </div>
+
+    <h2 style="text-align:center; margin-top: 30px;">Kategoriler</h2>
+    <div class="categories">
+        <a href="kategori.html?tur=tatli">Tatlılar</a>
+        <a href="kategori.html?tur=ana_yemek">Ana Yemekler</a>
+        <a href="kategori.html?tur=corba">Çorbalar</a>
+        <a href="kategori.html?tur=atistirmalik">Atıştırmalıklar</a>
+        <a href="kategori.html?tur=icecek">İçecekler</a>
+    </div>
+
+    <div class="masonry-gallery">
+        <img src="corba.jpg" alt="Lezzetli bir çorba tarifi">
+        <img src="ana_yemek.jpg" alt="Ana yemek önerisi">
+        <img src="tatli.jpg" alt="Tatlı tarifi">
+        <img src="atistirmalik.jpg" alt="Atıştırmalık tarif">
+        <img src="icecek.jpg" alt="Serinletici içecekler">
+        <img src="pizza.jpg" alt="Ev yapımı pizza">
+        <img src="yumurta.jpg" alt="Kahvaltılık yumurta tarifi">
+        <img src="tatlii.jpg" alt="İkinci tatlı örneği">
+        <img src="yemek.jpg" alt="Farklı bir ana yemek">
+        <img src="yemekkk.jpg" alt="Alternatif bir yemek">
+        <img src="yemekkkk.jpg" alt="Başka bir ana yemek tarifi">
+    </div>
+
+    <div id="admin-panel-link" style="display: none; text-align: center; margin-top: 20px;">
+        <a href="admin.html">Admin Paneli</a>
+    </div>
+
+    <footer>
+        © 2025 Bi'TabakDaha. Tüm hakları saklıdır.
+    </footer>
+
+    <script>
+        // Basit admin kontrolü (örnek: localStorage üzerinden)
+        const currentUser = localStorage.getItem("username");
+        if (currentUser === "admin") {
+            document.getElementById("admin-panel-link").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

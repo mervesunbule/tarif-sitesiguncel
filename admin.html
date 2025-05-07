@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli | Bi'TabakDaha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+    <div class="navbar-logo">
+        <a href="index.html" style="display: flex; align-items: center;">
+            <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg" style="height: 60px; margin-right: 10px; vertical-align: middle;">
+            <h1>Bi'TabakDaha</h1>
+        </a>
+    </div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="navbar-links" id="navbar-links">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="search.html">Tarif Ara</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li><a href="add-recipe.html">Tarif Ekle</a></li>
+        <li><a href="admin.html">Admin Paneli</a></li>
+        <li><a href="login.html">Giriş Yap</a></li>
+    </ul>
+</nav>
+
+    <div class="admin-panel">
+        <h2>Admin Paneli</h2>
+        <p>Buradan tarifleri yönetebilirsiniz.</p>
+        <button onclick="window.location.href='add-recipe.html'">Yeni Tarif Ekle</button>
+        <button>Tarifleri Görüntüle</button>
+        <button>İstatistikler</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <!-- Dış JavaScript dosyasına referans -->
+    <script src="script.js"></script>
+</body>
+</html>

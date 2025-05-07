@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarif Ekle | Bi'TabakDaha</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Temel stiller (style.css'de de olabilir) */
+        body, html {
+            font-family: Arial, sans-serif;
+            /* background-color: #f9f9f9; */ /* Bu satır yorum satırı yapıldı veya silindi */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Tarif Ekle Formu Stilleri */
+        .tarif-ekle {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .tarif-ekle h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .tarif-ekle form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tarif-ekle label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .tarif-ekle select,
+        .tarif-ekle input[type="text"],
+        .tarif-ekle input[type="number"],
+        .tarif-ekle input[type="file"],
+        .tarif-ekle textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .tarif-ekle textarea {
+            resize: vertical;
+        }
+
+        .tarif-ekle button[type="submit"] {
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tarif-ekle button[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg" style="height: 60px; margin-right: 10px; vertical-align: middle;">
+                <h1>Bi'TabakDaha</h1>
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="add-recipe.html">Tarif Ekle</a>
+            <a href="search.html">Tarif Ara</a>
+            <a href="favorites.html">Favorilerim</a>
+        </div>
+        <div class="user-nav">
+            <a href="register.html">Kayıt Ol</a>
+            <a href="login.html">Giriş Yap</a>
+            <a href="profile.html">Profil</a>
+        </div>
+    </div>
+
+    <div class="tarif-ekle">
+        <h2>Yeni Tarif Ekle</h2>
+        <form action="#" method="post">
+            <label for="recipe-category">Kategori:</label>
+            <select id="recipe-category" name="recipe-category" required>
+                <option value="">Lütfen bir kategori seçin</option>
+                <option value="tatli">Tatlılar</option>
+                <option value="ana_yemek">Ana Yemekler</option>
+                <option value="corba">Çorbalar</option>
+                <option value="atistirmalik">Atıştırmalıklar</option>
+                <option value="icecek">İçecekler</option>
+            </select>
+            <small>Birden fazla kategori seçmek için Ctrl (Windows) veya Command (Mac) tuşunu kullanınız.</small>
+
+            <label for="recipe-name">Başlık:</label>
+            <input type="text" id="recipe-name" name="recipe-name" placeholder="Tarif Başlığı" required>
+
+            <label for="ingredients">Malzemeler:</label>
+            <textarea id="ingredients" name="ingredients" placeholder="Malzemeleri listeleyin" rows="5" required></textarea>
+
+            <label for="prep-time">Hazırlık Süresi (dakika):</label>
+            <input type="number" id="prep-time" name="prep-time" placeholder="Hazırlık Süresi" required>
+
+            <label for="cook-time">Pişirme Süresi (dakika):</label>
+            <input type="number" id="cook-time" name="cook-time" placeholder="Pişirme Süresi" required>
+
+            <label for="instructions">Yapılış Aşamaları:</label>
+            <textarea id="instructions" name="instructions" placeholder="Tarifin yapılışını adım adım anlatın" rows="7" required></textarea>
+
+            <label for="recipe-image">Tarif Fotoğrafı (isteğe bağlı):</label>
+            <input type="file" id="recipe-image" name="recipe-image" accept="image/*">
+            <small>Dosya Seç</small>
+
+            <button type="submit">Tarif Ekle</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır
+    </footer>
+
+    <script>
+        // Giriş kontrolü ile Tarif Ekle yönlendirme (güncellenmiş)
+        const currentUser = localStorage.getItem("username");
+        const tarifEkleLinkIndex = document.querySelector('.main-nav a[href="add-recipe.html"]');
+
+        const handleTarifEkleClick = (e) => {
+            if (!currentUser) {
+                e.preventDefault();
+                alert("Tarif ekleyebilmek için giriş yapmalısınız!");
+                window.location.href = "login.html?redirect=add-recipe.html";
+            }
+        };
+
+        if (tarifEkleLinkIndex) {
+            tarifEkleLinkIndex.addEventListener("click", handleTarifEkleClick);
+        }
+    </script>
+</body>
+</html>

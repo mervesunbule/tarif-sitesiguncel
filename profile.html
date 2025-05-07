@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil | Bi'TabakDaha</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .header .logo h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #000; /* Rengi siyah yaptık */
+    }
+
+    .main-nav a,
+    .user-nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .profil {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .profil-info {
+      flex: 1;
+    }
+
+    .profil-info h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .profil-detay p {
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .profil-info button {
+      padding: 10px 20px;
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 15px;
+    }
+
+    .profil-info button:hover {
+      background-color: #d35400;
+    }
+
+    .profil-tarifler {
+      flex: 1;
+    }
+
+    .profil-tarifler h3 {
+      color: #333;
+      margin-bottom: 15px;
+    }
+
+    .tarif-kart {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 15px;
+      transition: transform 0.3s;
+      margin-bottom: 15px;
+    }
+
+    .tarif-kart:hover {
+      transform: translateY(-5px);
+    }
+
+    .tarif-kart img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .tarif-kart h4 {
+      color: #333;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+
+    .tarif-kart p {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    .tarif-kart a {
+      display: inline-block;
+      padding: 8px 16px;
+      text-decoration: none;
+      background-color: #f9f9f9;
+      color: #444;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+      border: 1px solid #ddd;
+    }
+
+    .tarif-kart a:hover {
+      background-color: #e67e22;
+      color: white;
+      border-color: #e67e22;
+    }
+
+    .profil-foto-ekle {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .profil-foto-ekle h4 {
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .profil-foto-ekle input[type="file"] {
+      margin-bottom: 10px;
+    }
+
+    .profil-foto-ekle img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #ddd;
+    }
+
+    .profil-detay-grup {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .profil-detay-grup strong {
+      min-width: 100px;
+      margin-right: 10px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f1f1f1;
+      color: #666;
+      margin-top: 40px;
+    }
+
+    .logout-button {
+      background-color: #e67e22;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 20px;
+    }
+
+    .logout-button:hover {
+      background-color: #d35400;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <a href="index.html" style="display: flex; align-items: center;">
+        <img src="logo.jpg" style="height: 60px; margin-right: 10px;" alt="Logo" />
+        <h1>Bi'TabakDaha</h1>
+      </a>
+    </div>
+    <div class="main-nav">
+      <a href="index.html">Ana Sayfa</a>
+      <a href="add-recipe.html">Tarif Ekle</a>
+      <a href="search.html">Tarif Ara</a>
+      <a href="favorites.html">Favorilerim</a>
+    </div>
+    <div class="user-nav">
+      <a href="register.html">Kayıt Ol</a>
+      <a href="login.html">Giriş Yap</a>
+      <a href="profile.html">Profil</a>
+      <a href="logout.html">Çıkış Yap</a>
+    </div>
+  </div>
+
+  <div class="profil">
+    <div class="profil-info">
+      <h2>Profil Bilgileriniz</h2>
+      <div class="profil-detay">
+        <div class="profil-detay-grup">
+          <strong>Ad Soyad:</strong>
+          <span>Ahmet Yılmaz</span>
+        </div>
+        <div class="profil-detay-grup">
+          <strong>E-posta:</strong>
+          <span>ahmet@example.com</span>
+        </div>
+      </div>
+      <button onclick="window.location.href='edit-profile.html'">Profili Düzenle</button>
+
+      <div class="profil-foto-ekle">
+        <h4>Profil Fotoğrafı Ekle</h4>
+        <img id="profilGorsel" src="profil-default.jpg" alt="Profil Fotoğrafı" />
+        <input type="file" id="profil-fotograf" name="profil-fotograf" />
+        <button onclick="alert('Fotoğraf sadece önizleme olarak yüklendi.')">Yükle</button>
+      </div>
+      
+      <form action="logout.php" method="post">
+        <button type="submit" class="logout-button">Çıkış Yap</button>
+      </form>
+    </div>
+
+    <div class="profil-tarifler">
+      <h3>Paylaşılan Tarifler</h3>
+      <div class="tarif-kart">
+        <img src="kek.jpg" alt="Çikolatalı Kek" />
+        <h4>Çikolatalı Kek</h4>
+        <p>Tarif | 30 dk</p>
+        <a href="recipe-detail.html">Tarifi Görüntüle</a>
+      </div>
+      <div class="tarif-kart">
+        <img src="corba.jpg" alt="Mercimek Çorbası" />
+        <h4>Mercimek Çorbası</h4>
+        <p>Çorba | 25 dk</p>
+        <a href="recipe-detail.html">Tarifi Görüntüle</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır</p>
+  </footer>
+
+  <script>
+    document.getElementById("profil-fotograf").addEventListener("change", function(event) {
+      const file = event.target.files[0];
+      const img = document.getElementById("profilGorsel");
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          img.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>

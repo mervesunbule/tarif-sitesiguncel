@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol | Bi'TabakDaha</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Temel stiller (style.css'de de olabilir) */
+        body, html {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Kayıt Formu Stilleri */
+        .register {
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .register h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .register input[type="text"],
+        .register input[type="email"],
+        .register input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        .register button[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #e67e22;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .register button[type="submit"]:hover {
+            background-color: #d35400;
+        }
+
+        .register .login-link {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .register .login-link a {
+            color: #e67e22;
+            text-decoration: none;
+        }
+
+        .register .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #eee;
+            color: #777;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center;">
+                <img src="C:\Users\ASUS\Desktop\tarif\logo.jpg" style="height: 60px; margin-right: 10px; vertical-align: middle;">
+                <h1>Bi'TabakDaha</h1>
+            </a>
+        </div>
+        <div class="main-nav">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="add-recipe.html">Tarif Ekle</a>
+            <a href="search.html">Tarif Ara</a>
+            <a href="favorites.html">Favorilerim</a>
+        </div>
+        <div class="user-nav">
+            <a href="register.html">Kayıt Ol</a>
+            <a href="login.html">Giriş Yap</a>
+            <a href="profile.html">Profil</a>
+        </div>
+    </div>
+
+    <div class="register">
+        <h2>Kayıt Ol</h2>
+        <form action="#" method="post">
+            <input type="text" name="username" placeholder="Kullanıcı Adı" required>
+            <input type="email" name="email" placeholder="E-posta" required>
+            <input type="password" name="password" placeholder="Şifre" required>
+            <input type="password" name="confirm-password" placeholder="Şifreyi Onayla" required>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+        <div class="login-link">
+            Zaten bir hesabın var mı? <a href="login.html">Giriş Yap</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Bi'TabakDaha | Tüm Hakları Saklıdır</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
